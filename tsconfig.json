@@ -23,5 +23,6 @@
   "include": [
     "src",
     "amplify"
-  ]
+  ],
+  "exclude": ["amplify", "node_modules"] 
 }
