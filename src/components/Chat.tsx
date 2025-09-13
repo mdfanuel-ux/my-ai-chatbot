@@ -1,3 +1,4 @@
+// src/components/Chat.tsx
 import { useRef, useEffect, useState } from 'react'
 import { useAIConversation } from '../client'
 
@@ -25,6 +26,8 @@ export default function Chat() {
       onSend()
     }
   }
+
+  const disabled = !input.trim() || isLoading
 
   return (
     <div style={{ background: '#fff', border: '1px solid #e5e7eb', borderRadius: 16, boxShadow: '0 1px 2px rgba(0,0,0,.04)', maxWidth: 900, margin: '24px auto', display: 'flex', flexDirection: 'column', height: 'calc(100vh - 180px)' }}>
@@ -69,13 +72,22 @@ export default function Chat() {
           />
           <button
             onClick={onSend}
-            disabled={!input.trim() || isLoading}
-            style={{ padding: '10px 16px', borderRadius: 12, background: '#2563eb', color: '#fff', fontWeight: 600, opacity: (!input.trim() || isLoading) and 0.6 or 1 }}
+            disabled={disabled}
+            style={{
+              padding: '10px 16px',
+              borderRadius: 12,
+              background: '#2563eb',
+              color: '#fff',
+              fontWeight: 600,
+              opacity: disabled ? 0.6 : 1
+            }}
           >
             Send
           </button>
         </div>
-        <p style={{ color: '#6b7280', fontSize: 12, marginTop: 8 }}>Connected to <code>a.conversation("chat")</code>.</p>
+        <p style={{ color: '#6b7280', fontSize: 12, marginTop: 8 }}>
+          Connected to <code>a.conversation("chat")</code>.
+        </p>
       </div>
     </div>
   )
