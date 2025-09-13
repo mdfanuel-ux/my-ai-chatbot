@@ -11,7 +11,7 @@ export default function App() {
         </div>
       </header>
       <main style={{ maxWidth: 1100, margin: '0 auto', padding: 16 }}>
-        <Authenticator>
+        <Authenticator loginMechanisms={['email']}>
           {() => <Chat />}
         </Authenticator>
       </main>
