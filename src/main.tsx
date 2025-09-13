@@ -1,4 +1,4 @@
-import { Amplify } from 'aws-amplify';
+/*import { Amplify } from 'aws-amplify';
 import outputs from '../amplify_outputs.json'; // ← one level up from src/
 Amplify.configure(outputs);
 
@@ -14,3 +14,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <App />
   </React.StrictMode>,
 );
+*/
+// src/main.tsx (TEMP)
+import { Amplify } from 'aws-amplify';
+Amplify.configure({
+  Auth: {
+    Cognito: {
+      userPoolId: 'us-XXXX-XXXXXXXXX',
+      userPoolClientId: 'XXXXXXXXXXXXXXXXXXXX',
+    },
+    region: 'us-XXXX-1',
+    loginWith: { email: true },
+  },
+});
