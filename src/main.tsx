@@ -7,6 +7,8 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import '@aws-amplify/ui-react/styles.css';
 
+console.log('Amplify outputs:', outputs);
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />
