@@ -1,0 +1,7 @@
+node_modules
+dist
+.amplify
+.aws-sam
+amplify/#current-cloud-backend
+.env*
+.DS_Store
